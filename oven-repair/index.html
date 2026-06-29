@@ -176,18 +176,24 @@
     .navbar .logo-text {
       font-weight: 800;
       font-size: 1.35rem;
-      color: var(--text-primary);
+      color: #fff;
       text-decoration: none;
       line-height: 1.2;
+    }
+    .navbar.scrolled .logo-text {
+      color: var(--text-primary);
     }
     .navbar .logo-sub {
       font-size: 0.7rem;
       font-weight: 400;
-      color: var(--text-secondary);
+      color: rgba(255, 255, 255, 0.6);
       letter-spacing: 0.02em;
     }
+    .navbar.scrolled .logo-sub {
+      color: var(--text-secondary);
+    }
     .nav-link {
-      color: var(--text-secondary) !important;
+      color: rgba(255, 255, 255, 0.75) !important;
       font-weight: 500;
       font-size: 0.875rem;
       padding: 6px 14px !important;
@@ -195,7 +201,14 @@
       transition: var(--transition);
     }
     .nav-link:hover {
-      color: var(--accent-light) !important;
+      color: #fff !important;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .navbar.scrolled .nav-link {
+      color: var(--text-secondary) !important;
+    }
+    .navbar.scrolled .nav-link:hover {
+      color: var(--accent) !important;
       background: rgba(37, 99, 235, 0.05);
     }
 
@@ -277,6 +290,9 @@
       color: #fff;
       transform: scale(1.04);
       box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+    }
+    .navbar.scrolled .btn-cta-nav {
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
     }
 
     /* ============================================
