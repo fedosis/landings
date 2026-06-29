@@ -172,7 +172,6 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-      padding: 8px 0;
     }
     .navbar .logo-text {
       font-weight: 800;
@@ -1126,8 +1125,16 @@
     ============================================ */
     .container {
       max-width: var(--container-max);
-      padding-left: clamp(12px, 3vw, 32px);
-      padding-right: clamp(12px, 3vw, 32px);
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 576px) {
+      .container { padding-left: 24px; padding-right: 24px; }
+    }
+    @media (min-width: 992px) {
+      .container { padding-left: 32px; padding-right: 32px; }
     }
 
     /* ============================================
@@ -1138,16 +1145,7 @@
       position: relative;
     }
     /* Section separator — gradient border between blocks */
-    section::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 10%;
-      right: 10%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.15), transparent);
-    }
-    section:last-of-type::after { display: none; }
+    section:last-of-type { border-bottom: none; }
 
     /* Section with top accent border */
     section.accent-top {
@@ -1179,8 +1177,6 @@
     @media (max-width: 575.98px) {
       .navbar .logo-text { font-size: 1.05rem; }
       .navbar .logo-sub { font-size: 0.6rem; }
-      .navbar { padding: 8px 0; }
-      .navbar.scrolled { padding: 6px 0; }
       .navbar-brand img { height: 40px !important; width: 40px !important; }
 
       .hero { padding: 80px 0 40px; text-align: center; }
@@ -1321,7 +1317,6 @@
 
     /* -------- Large desktop 1200px+ -------- */
     @media (min-width: 1200px) {
-      .container { padding-left: 32px; padding-right: 32px; }
       .hero h1 { font-size: 3rem; }
     }
 
@@ -1337,7 +1332,6 @@
       .hero { min-height: auto; padding: 80px 0 40px; }
       .hero .photo-frame { max-width: 160px; }
       .hero-advantages { grid-template-columns: 1fr 1fr 1fr; }
-      .navbar { padding: 6px 0; }
       .navbar-brand img { height: 36px !important; width: 36px !important; }
     }
 
