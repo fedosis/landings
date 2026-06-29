@@ -746,6 +746,15 @@
     /* ============================================
        BRANDS
     ============================================ */
+    .brand-item img {
+      max-height: 28px;
+      max-width: 80%;
+      filter: brightness(0.45);
+      transition: filter 0.3s ease;
+    }
+    .brand-item:hover img {
+      filter: brightness(1) saturate(1);
+    }
     .brand-item {
       display: flex;
       align-items: center;
@@ -935,6 +944,11 @@
       align-items: center;
       justify-content: center;
       margin: 0 auto;
+    }
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .about-photo .placeholder {
       display: flex;
@@ -1479,40 +1493,54 @@
       <div class="row g-4">
         <!-- Service 1: Ovens -->
         <div class="col-lg-6 reveal-left">
-          <div class="service-card">
-            <div class="icon-box"><i class="bi bi-thermometer-high"></i></div>
-            <h3>Электрические духовые шкафы</h3>
-            <ul>
-              <li>Не нагреваются</li>
-              <li>Не включаются</li>
-              <li>Выбивает автомат</li>
-              <li>Не работают режимы</li>
-              <li>Не работает конвекция</li>
-              <li>Не работает подсветка</li>
-              <li>Ошибки на дисплее</li>
-              <li>Замена ТЭНов</li>
-              <li>Замена термостатов</li>
-              <li>Ремонт модулей управления</li>
-            </ul>
+          <div class="service-card" style="background: linear-gradient(135deg, #fff 60%, rgba(37,99,235,0.03));">
+            <div class="row align-items-center g-4">
+              <div class="col-md-7">
+                <div class="icon-box"><i class="bi bi-thermometer-high"></i></div>
+                <h3>Электрические духовые шкафы</h3>
+                <ul>
+                  <li>Не нагреваются</li>
+                  <li>Не включаются</li>
+                  <li>Выбивает автомат</li>
+                  <li>Не работают режимы</li>
+                  <li>Не работает конвекция</li>
+                  <li>Не работает подсветка</li>
+                  <li>Ошибки на дисплее</li>
+                  <li>Замена ТЭНов</li>
+                  <li>Замена термостатов</li>
+                  <li>Ремонт модулей управления</li>
+                </ul>
+              </div>
+              <div class="col-md-5">
+                <img src="assets/oven-1.jpg" alt="Ремонт духового шкафа" class="w-100 rounded-4" style="aspect-ratio:1;object-fit:cover;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Service 2: Hobs -->
         <div class="col-lg-6 reveal-right">
-          <div class="service-card">
-            <div class="icon-box"><i class="bi bi-grid-3x3-gap-fill"></i></div>
-            <h3>Электрические варочные панели</h3>
-            <ul>
-              <li>Не включается</li>
-              <li>Не работают конфорки</li>
-              <li>Не реагирует сенсор</li>
-              <li>Самопроизвольное отключение</li>
-              <li>Ошибки на дисплее</li>
-              <li>Замена стеклокерамики</li>
-              <li>Ремонт силовых модулей</li>
-              <li>Замена конфорок</li>
-              <li>Ремонт электронных плат</li>
-            </ul>
+          <div class="service-card" style="background: linear-gradient(135deg, #fff 60%, rgba(34,197,94,0.03));">
+            <div class="row align-items-center g-4">
+              <div class="col-md-7">
+                <div class="icon-box"><i class="bi bi-grid-3x3-gap-fill"></i></div>
+                <h3>Электрические варочные панели</h3>
+                <ul>
+                  <li>Не включается</li>
+                  <li>Не работают конфорки</li>
+                  <li>Не реагирует сенсор</li>
+                  <li>Самопроизвольное отключение</li>
+                  <li>Ошибки на дисплее</li>
+                  <li>Замена стеклокерамики</li>
+                  <li>Ремонт силовых модулей</li>
+                  <li>Замена конфорок</li>
+                  <li>Ремонт электронных плат</li>
+                </ul>
+              </div>
+              <div class="col-md-5">
+                <img src="assets/hob-1.jpg" alt="Ремонт варочной панели" class="w-100 rounded-4" style="aspect-ratio:1;object-fit:cover;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1792,12 +1820,12 @@
       </div>
 
       <div class="row g-3 justify-content-center">
-        <div class="col-4 col-md-3 col-lg-2 reveal-scale"><div class="brand-item">BOSCH</div></div>
-        <div class="col-4 col-md-3 col-lg-2 reveal-scale" style="transition-delay: 0.03s;"><div class="brand-item">SIEMENS</div></div>
+        <div class="col-4 col-md-3 col-lg-2 reveal-scale"><div class="brand-item"><img src="assets/bosch.svg" alt="Bosch" style="height:24px;filter:brightness(0.4);"></div></div>
+        <div class="col-4 col-md-3 col-lg-2 reveal-scale" style="transition-delay: 0.03s;"><div class="brand-item"><img src="assets/siemens.svg" alt="Siemens" style="height:24px;filter:brightness(0.4);"></div></div>
         <div class="col-4 col-md-3 col-lg-2 reveal-scale" style="transition-delay: 0.06s;"><div class="brand-item">AEG</div></div>
         <div class="col-4 col-md-3 col-lg-2 reveal-scale" style="transition-delay: 0.09s;"><div class="brand-item">ELECTROLUX</div></div>
-        <div class="col-4 col-md-3 col-lg-2 reveal-scale" style="transition-delay: 0.12s;"><div class="brand-item">SAMSUNG</div></div>
-        <div class="col-4 col-md-3 col-lg-2 reveal-scale" style="transition-delay: 0.15s;"><div class="brand-item">LG</div></div>
+        <div class="col-4 col-md-3 col-lg-2 reveal-scale" style="transition-delay: 0.12s;"><div class="brand-item"><img src="assets/samsung.svg" alt="Samsung" style="height:20px;filter:brightness(0.4);"></div></div>
+        <div class="col-4 col-md-3 col-lg-2 reveal-scale" style="transition-delay: 0.15s;"><div class="brand-item"><img src="assets/lg.svg" alt="LG" style="height:22px;filter:brightness(0.4);"></div></div>
         <div class="col-4 col-md-3 col-lg-2 reveal-scale" style="transition-delay: 0.18s;"><div class="brand-item">WHIRLPOOL</div></div>
         <div class="col-4 col-md-3 col-lg-2 reveal-scale" style="transition-delay: 0.21s;"><div class="brand-item">INDESIT</div></div>
         <div class="col-4 col-md-3 col-lg-2 reveal-scale" style="transition-delay: 0.24s;"><div class="brand-item">HOTPOINT</div></div>
@@ -2059,11 +2087,8 @@
 
       <div class="row align-items-center g-5">
         <div class="col-lg-5 text-center">
-          <div class="about-photo reveal-left">
-            <div class="placeholder">
-              <i class="bi bi-person-circle"></i>
-              <span>Фото мастера</span>
-            </div>
+          <div class="about-photo">
+            <img src="assets/repair-1.jpg" alt="Мастер за работой" class="w-100 h-100" style="object-fit:cover;">
           </div>
         </div>
         <div class="col-lg-7 about-text reveal-right">
