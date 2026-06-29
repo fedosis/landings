@@ -308,6 +308,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transform: translateZ(0);
+    }
+    @media (min-width: 768px) {
+      .hero-bg img {
+        transform: scale(1.1);
+        transition: transform 0.1s linear;
+      }
     }
     .hero::before {
       content: '';
@@ -1338,6 +1345,90 @@
     /* ============================================
        FLOATING PHONE BUTTON (Mobile)
     ============================================ */
+    /* Floating messengers panel */
+    .floating-messengers {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 1060;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .floating-messengers a {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .floating-messengers a:active { transform: scale(0.92); }
+    .floating-messengers .fm-phone { background: var(--accent); color: #fff; }
+    .floating-messengers .fm-whatsapp { background: #25D366; color: #fff; }
+    .floating-messengers .fm-telegram { background: #0088cc; color: #fff; }
+    .floating-messengers .fm-viber { background: #7360F2; color: #fff; }
+    @media (min-width: 768px) {
+      .floating-messengers { display: none; }
+    }
+
+    /* Counters */
+    .counter-item { padding: 20px 10px; }
+    .counter-number {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      display: inline;
+    }
+    .counter-suffix {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--accent);
+      display: inline;
+      margin-left: 2px;
+    }
+    .counter-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* Map section */
+    .map-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-sm);
+      background: var(--bg-secondary);
+    }
+    .map-placeholder {
+      width: 100%;
+      aspect-ratio: 16/7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-tertiary);
+      color: var(--text-muted);
+      gap: 8px;
+    }
+    .map-placeholder i { font-size: 2.5rem; }
+    .map-placeholder span { font-size: 0.9rem; }
+    @media (max-width: 575.98px) {
+      .map-placeholder { aspect-ratio: 4/3; }
+    }
+
     .floating-phone {
       position: fixed;
       bottom: 24px;
@@ -1442,8 +1533,13 @@
     <div class="container position-relative" style="z-index: 2;">
       <div class="row align-items-center g-5">
         <div class="col-lg-7">
-          <div class="hero-badge reveal">
-            <i class="bi bi-shield-check"></i> Частный мастер · Гарантия до 1 года
+          <div class="d-flex flex-wrap gap-2 mb-3 reveal">
+            <span class="hero-badge mb-0">
+              <i class="bi bi-shield-check"></i> Частный мастер · Гарантия до 1 года
+            </span>
+            <span class="hero-badge mb-0" style="background:rgba(34,197,94,0.15);border-color:rgba(34,197,94,0.25);color:#22C55E;">
+              <i class="bi bi-clock-fill"></i> ⏱ Выезд в день обращения
+            </span>
           </div>
           <h1 class="reveal" style="transition-delay: 0.1s;">
             Ремонт электрических духовых шкафов и варочных панелей <span class="highlight">с гарантией до 1 года</span>
@@ -1630,6 +1726,36 @@
               <p>Специализируюсь именно на духовых шкафах и панелях</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COUNTERS
+  ============================================ -->
+  <section style="background: var(--bg-tertiary); padding: 60px 0;">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-lg-3 counter-item reveal">
+          <div class="counter-number" data-target="10">0</div>
+          <div class="counter-suffix">+</div>
+          <div class="counter-label">лет опыта</div>
+        </div>
+        <div class="col-6 col-lg-3 counter-item reveal" style="transition-delay:0.1s;">
+          <div class="counter-number" data-target="500">0</div>
+          <div class="counter-suffix">+</div>
+          <div class="counter-label">выполненных ремонтов</div>
+        </div>
+        <div class="col-6 col-lg-3 counter-item reveal" style="transition-delay:0.2s;">
+          <div class="counter-number" data-target="20">0</div>
+          <div class="counter-suffix">+</div>
+          <div class="counter-label">брендов техники</div>
+        </div>
+        <div class="col-6 col-lg-3 counter-item reveal" style="transition-delay:0.3s;">
+          <div class="counter-number" data-target="1">0</div>
+          <div class="counter-suffix"></div>
+          <div class="counter-label">год гарантии</div>
         </div>
       </div>
     </div>
@@ -2154,6 +2280,28 @@
   </section>
 
   <!-- ============================================
+       MAP
+  ============================================ -->
+  <section style="background: var(--bg-primary); padding-top: 0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label">Район обслуживания</span>
+        <h2>Выезжаю по городу и области</h2>
+        <p>Принимаю заявки ежедневно с 9:00 до 21:00</p>
+      </div>
+      <div class="reveal">
+        <div class="map-wrap">
+          <div class="map-placeholder">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>📍 Карта района обслуживания</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">Выезд по городу и ближайшим пригородам</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
        FOOTER
   ============================================ -->
   <footer>
@@ -2170,7 +2318,7 @@
           <p class="mt-3">Частный мастер по ремонту электрических духовых шкафов и варочных панелей. Работаю без посредников. Гарантия до 1 года.</p>
         </div>
         <div class="col-6 col-lg-2">
-          <h6 class="fw-600 mb-3" style="font-size:0.85rem;color:var(--text-white);">Навигация</h6>
+          <h6 class="fw-600 mb-3" style="font-size:0.85rem;color:var(--text-primary);">Навигация</h6>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="#services">Услуги</a></li>
             <li class="mb-2"><a href="#pricing">Цены</a></li>
@@ -2180,7 +2328,7 @@
           </ul>
         </div>
         <div class="col-6 col-lg-2">
-          <h6 class="fw-600 mb-3" style="font-size:0.85rem;color:var(--text-white);">Услуги</h6>
+          <h6 class="fw-600 mb-3" style="font-size:0.85rem;color:var(--text-primary);">Услуги</h6>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="#">Ремонт духовых шкафов</a></li>
             <li class="mb-2"><a href="#">Ремонт варочных панелей</a></li>
@@ -2189,7 +2337,7 @@
           </ul>
         </div>
         <div class="col-lg-4">
-          <h6 class="fw-600 mb-3" style="font-size:0.85rem;color:var(--text-white);">Контакты</h6>
+          <h6 class="fw-600 mb-3" style="font-size:0.85rem;color:var(--text-primary);">Контакты</h6>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="tel:+7XXX"><i class="bi bi-telephone-fill me-2"></i>+7 (XXX) XXX-XX-XX</a></li>
             <li class="mb-2"><a href="mailto:info@example.com"><i class="bi bi-envelope-fill me-2"></i>info@example.com</a></li>
@@ -2209,7 +2357,15 @@
     </div>
   </footer>
 
-  <!-- Floating Phone Button (Mobile) -->
+  <!-- Floating messengers (Mobile) -->
+  <div class="floating-messengers">
+    <a href="tel:+7XXX" class="fm-phone" aria-label="Позвонить"><i class="bi bi-telephone-fill"></i></a>
+    <a href="#" class="fm-whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <a href="#" class="fm-telegram" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
+    <a href="#" class="fm-viber" aria-label="Viber"><i class="bi bi-phone-vibrate"></i></a>
+  </div>
+
+  <!-- Floating Phone Button (Desktop) -->
   <a href="tel:+7XXX" class="floating-phone" aria-label="Позвонить">
     <i class="bi bi-telephone-fill"></i>
   </a>
@@ -2293,7 +2449,50 @@
     })();
 
     // =====================================================
-    // 4. Form Handler
+    // 4. Animated Counters
+    // =====================================================
+    (function() {
+      const counters = document.querySelectorAll('.counter-number');
+      if (!counters.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target);
+            const duration = 1500;
+            const start = performance.now();
+            function update(now) {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.floor(eased * target);
+              if (progress < 1) requestAnimationFrame(update);
+              else el.textContent = target;
+            }
+            requestAnimationFrame(update);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(el => observer.observe(el));
+    })();
+
+    // =====================================================
+    // 5. Parallax Hero
+    // =====================================================
+    (function() {
+      const heroBg = document.querySelector('.hero-bg img');
+      if (!heroBg || window.innerWidth < 768) return;
+      window.addEventListener('scroll', function() {
+        const scrolled = window.scrollY;
+        const maxScroll = window.innerHeight;
+        const translateY = scrolled * 0.15;
+        heroBg.style.transform = 'scale(1.1) translateY(' + translateY + 'px)';
+      }, { passive: true });
+    })();
+
+    // =====================================================
+    // 6. Improved Form Handler
     // =====================================================
     (function() {
       const form = document.getElementById('contactForm');
@@ -2302,33 +2501,51 @@
           e.preventDefault();
           const name = document.getElementById('name').value.trim();
           const phone = document.getElementById('phone').value.trim();
+          const message = document.getElementById('message').value.trim();
           if (!name || !phone) {
-            alert('Пожалуйста, заполните имя и номер телефона.');
+            const alertBox = document.createElement('div');
+            alertBox.className = 'alert alert-danger mt-3 mb-0 py-2';
+            alertBox.style.cssText = 'background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.15);border-radius:10px;color:#dc2626;font-size:0.85rem;';
+            alertBox.textContent = 'Пожалуйста, заполните имя и номер телефона.';
+            const oldAlert = form.querySelector('.alert');
+            if (oldAlert) oldAlert.remove();
+            form.appendChild(alertBox);
+            setTimeout(() => alertBox.remove(), 3000);
             return;
           }
-          // Simulate submission
           const btn = form.querySelector('button[type="submit"]');
           const origText = btn.innerHTML;
-          btn.innerHTML = '<i class="bi bi-check-circle"></i> Отправлено!';
+          const origBg = btn.style.background;
+          btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span> Отправляем...';
           btn.disabled = true;
-          btn.style.background = '#22C55E';
+          // Telegram-style simulation with success animation
           setTimeout(() => {
-            btn.innerHTML = origText;
-            btn.disabled = false;
-            btn.style.background = '';
-            form.reset();
-          }, 3000);
+            btn.innerHTML = '<i class="bi bi-check-circle-fill"></i> Заявка отправлена!';
+            btn.style.background = '#22C55E';
+            form.querySelectorAll('.form-control').forEach(f => f.value = '');
+            const alertBox = document.createElement('div');
+            alertBox.className = 'alert mt-3 mb-0 py-2';
+            alertBox.style.cssText = 'background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.15);border-radius:10px;color:#16a34a;font-size:0.85rem;';
+            alertBox.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i> Спасибо! Я свяжусь с вами в ближайшее время.';
+            form.appendChild(alertBox);
+            setTimeout(() => {
+              btn.innerHTML = origText;
+              btn.disabled = false;
+              btn.style.background = origBg;
+              alertBox.remove();
+            }, 4000);
+          }, 1200);
         });
       }
     })();
 
     // =====================================================
-    // 5. Auto year in footer
+    // 7. Auto year in footer
     // =====================================================
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // =====================================================
-    // 6. Smooth dismiss mobile menu on link click
+    // 8. Smooth dismiss mobile menu on link click
     // =====================================================
     document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
       link.addEventListener('click', function() {
