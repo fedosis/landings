@@ -1494,9 +1494,8 @@
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 8px;
       z-index: 1060;
-      padding: 8px 12px;
+      padding: 8px;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(0,0,0,0.06);
@@ -1504,21 +1503,18 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     }
     .floating-messengers a {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       text-decoration: none;
       transition: all 0.2s ease;
     }
     .floating-messengers a:active { transform: scale(0.92); }
-    .floating-messengers .fm-phone { background: var(--accent); color: #fff; }
-    .floating-messengers .fm-whatsapp { background: #25D366; color: #fff; }
     .floating-messengers .fm-telegram { background: #0088cc; color: #fff; }
-    .floating-messengers .fm-viber { background: #7360F2; color: #fff; }
     @media (min-width: 768px) {
       .floating-messengers { display: none; }
     }
@@ -2589,10 +2585,7 @@
 
   <!-- Floating messengers (Mobile) -->
   <div class="floating-messengers">
-    <a href="tel:+7XXX" class="fm-phone" aria-label="Позвонить"><i class="bi bi-telephone-fill"></i></a>
-    <a href="#" class="fm-whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
     <a href="#" class="fm-telegram" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
-    <a href="#" class="fm-viber" aria-label="Viber"><i class="bi bi-phone-vibrate"></i></a>
   </div>
 
   <!-- Floating Phone Button (Desktop) -->
