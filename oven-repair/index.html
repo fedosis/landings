@@ -723,21 +723,55 @@
     /* ============================================
        PRICING CARDS
     ============================================ */
-    .pricing-card {
-      .pricing-card {
-        background: var(--bg-secondary);
-        border: 1px solid var(--glass-border);
-        border-radius: var(--radius-md);
-        padding: 36px 28px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-        box-shadow: var(--shadow-sm);
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+    .pricing-grid > div {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .pricing-grid .pricing-card {
+      flex: 1;
+    }
+    @media (min-width: 1200px) {
+      .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 960px;
+        margin: 0 auto;
       }
-      .pricing-card::before {
+    }
+    .pricing-placeholder {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .pricing-placeholder {
+        display: block;
+        visibility: hidden;
+      }
+      .pricing-placeholder .pricing-card {
+        border-color: transparent !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+    }
+      .pricing-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .pricing-card::before {
         content: '';
         position: absolute;
         top: 0;
@@ -2045,8 +2079,8 @@
         <p>Итоговая стоимость зависит от сложности ремонта и необходимых запчастей</p>
       </div>
 
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.05s;">
+      <div class="pricing-grid">
+        <div class="reveal" style="transition-delay: 0.05s;">
           <div class="pricing-card">
             <div class="price-icon"><i class="bi bi-search-heart"></i></div>
             <h4>Диагностика</h4>
@@ -2061,7 +2095,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.1s;">
+        <div class="reveal" style="transition-delay: 0.1s;">
           <div class="pricing-card">
             <div class="price-icon"><i class="bi bi-thermometer-high"></i></div>
             <h4>Ремонт духового шкафа</h4>
@@ -2077,7 +2111,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.15s;">
+        <div class="reveal" style="transition-delay: 0.15s;">
           <div class="pricing-card">
             <div class="price-icon"><i class="bi bi-grid-3x3-gap-fill"></i></div>
             <h4>Ремонт варочной панели</h4>
@@ -2093,7 +2127,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.2s;">
+        <div class="reveal" style="transition-delay: 0.2s;">
           <div class="pricing-card">
             <div class="price-icon"><i class="bi bi-droplet-half"></i></div>
             <h4>Замена ТЭНа</h4>
@@ -2108,7 +2142,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.25s;">
+        <div class="reveal" style="transition-delay: 0.25s;">
           <div class="pricing-card">
             <div class="price-icon"><i class="bi bi-cpu"></i></div>
             <h4>Ремонт электронного модуля</h4>
@@ -2125,7 +2159,7 @@
         </div>
 
         <!-- Placeholder to balance last row -->
-        <div class="col-md-6 col-lg-4 d-none d-md-block" style="visibility:hidden;">
+        <div class="pricing-placeholder" style="visibility:hidden;">
           <div class="pricing-card" style="border-color:transparent;box-shadow:none;background:transparent;">
             <div class="price-icon" style="background:transparent;"><i style="opacity:0;">.</i></div>
             <h4 style="opacity:0;">_</h4>
