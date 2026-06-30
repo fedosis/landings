@@ -167,6 +167,13 @@
       transition: var(--transition);
       z-index: 1050;
     }
+    .navbar-brand img {
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.9), 0 2px 12px rgba(0,0,0,0.2);
+      transition: box-shadow 0.3s ease;
+    }
+    .navbar.scrolled .navbar-brand img {
+      box-shadow: 0 0 0 2px rgba(37,99,235,0.15), 0 2px 8px rgba(0,0,0,0.08);
+    }
     .navbar.scrolled {
       background: rgba(255, 255, 255, 0.92) !important;
       backdrop-filter: blur(20px);
@@ -316,7 +323,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0, 0, 0, 0.65);
       z-index: 1;
     }
     .hero-bg img {
@@ -361,25 +368,27 @@
       line-height: 1.2;
       margin-bottom: 1rem;
       color: #fff;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
     }
     .hero h1 .highlight {
-      background: linear-gradient(135deg, #60a5fa, #93c5fd);
+      background: linear-gradient(135deg, #93c5fd, #b3d9ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     .hero p {
       font-size: clamp(0.95rem, 1.3vw, 1.15rem);
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 0.85);
       max-width: 560px;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.35);
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       padding: 6px 16px;
       border-radius: 50px;
       font-size: 0.8rem;
@@ -387,6 +396,7 @@
       font-weight: 600;
       margin-bottom: 1.5rem;
       backdrop-filter: blur(8px);
+      text-shadow: 0 1px 6px rgba(0,0,0,0.3);
     }
     .hero-badge i { font-size: 0.8rem; }
 
@@ -442,7 +452,8 @@
       align-items: center;
       gap: 10px;
       font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 0.85);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.3);
     }
     .hero-advantage-item i {
       color: var(--accent-green);
