@@ -1301,6 +1301,29 @@
       border-top: 1px solid rgba(37, 99, 235, 0.08);
     }
 
+    /* Watermark stamp — logo in right corner of sections */
+    section.watermark::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 120px;
+      height: 120px;
+      background: url('assets/logo.png') no-repeat center/contain;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: -1;
+    }
+    @media (max-width: 768px) {
+      section.watermark::after {
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        right: 10px;
+        opacity: 0.03;
+      }
+    }
+
     /* Adaptive card borders */
     .service-card,
     .pricing-card,
@@ -1717,7 +1740,7 @@
   <!-- ============================================
        SERVICES
   ============================================ -->
-  <section id="services" style="background: var(--bg-primary);">
+  <section class="watermark" id="services" style="background: var(--bg-primary);">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Что ремонтирую</span>
@@ -1785,7 +1808,7 @@
   <!-- ============================================
        WHY ME
   ============================================ -->
-  <section style="background: var(--bg-primary); padding-top: 0;">
+  <section class="watermark" style="background: var(--bg-primary); padding-top: 0;">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Почему выбирают меня</span>
@@ -1873,7 +1896,7 @@
   <!-- ============================================
        COUNTERS
   ============================================ -->
-  <section style="background: var(--bg-tertiary); padding: 60px 0;">
+  <section class="watermark" style="background: var(--bg-tertiary); padding: 60px 0;">
     <div class="container">
       <div class="row g-4 text-center">
         <div class="col-6 col-lg-3 counter-item reveal">
@@ -1903,7 +1926,7 @@
   <!-- ============================================
        HOW IT WORKS (TIMELINE)
   ============================================ -->
-  <section style="background: var(--bg-primary);">
+  <section class="watermark" style="background: var(--bg-primary);">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Как проходит ремонт</span>
@@ -1979,7 +2002,7 @@
   <!-- ============================================
        PRICING
   ============================================ -->
-  <section id="pricing">
+  <section class="watermark" id="pricing">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Стоимость</span>
@@ -2076,7 +2099,7 @@
   <!-- ============================================
        BRANDS
   ============================================ -->
-  <section style="background: var(--bg-primary);">
+  <section class="watermark" style="background: var(--bg-primary);">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Какие бренды ремонтирую</span>
@@ -2114,7 +2137,7 @@
   <!-- ============================================
        WORKS GALLERY
   ============================================ -->
-  <section style="background: var(--bg-tertiary);">
+  <section class="watermark" style="background: var(--bg-tertiary);">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Портфолио</span>
@@ -2201,7 +2224,7 @@
   <!-- ============================================
        REVIEWS / TESTIMONIALS
   ============================================ -->
-  <section id="reviews">
+  <section class="watermark" id="reviews">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Отзывы</span>
@@ -2305,7 +2328,7 @@
   <!-- ============================================
        COMMON ISSUES (FAQ)
   ============================================ -->
-  <section id="faq" style="background: var(--bg-primary);">
+  <section class="watermark" id="faq" style="background: var(--bg-primary);">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Частые неисправности</span>
@@ -2430,7 +2453,7 @@
   <!-- ============================================
        ABOUT MASTER
   ============================================ -->
-  <section id="about">
+  <section class="watermark" id="about">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">О мастере</span>
@@ -2460,7 +2483,7 @@
   <!-- ============================================
        CONTACT FORM
   ============================================ -->
-  <section id="contact" style="background: var(--bg-primary);">
+  <section class="watermark" id="contact" style="background: var(--bg-primary);">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Свяжитесь со мной</span>
@@ -2508,7 +2531,7 @@
   <!-- ============================================
        MAP
   ============================================ -->
-  <section style="background: var(--bg-primary); padding-top: 0;">
+  <section class="watermark" style="background: var(--bg-primary); padding-top: 0;">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Район обслуживания</span>
