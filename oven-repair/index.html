@@ -914,6 +914,15 @@
       overflow: hidden;
       background: var(--bg-tertiary);
     }
+    .work-image-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('assets/logo-watermark.png') no-repeat center/40% auto;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.85;
+    }
     .work-image-wrap img {
       width: 100%;
       height: 100%;
@@ -1005,6 +1014,21 @@
     .lightbox .lb-next { right: 16px; }
     .lightbox .lb-prev:hover,
     .lightbox .lb-next:hover { opacity: 1; }
+
+    .lightbox::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30%;
+      max-width: 120px;
+      aspect-ratio: 1;
+      background: url('assets/logo-watermark.png') no-repeat center/contain;
+      pointer-events: none;
+      opacity: 0.5;
+      z-index: 2;
+    }
 
     @media (max-width: 576px) {
       .works-grid {
@@ -1387,8 +1411,8 @@
       left: 20px;
       width: 120px;
       height: 120px;
-      background: url('assets/logo.png') no-repeat center/contain;
-      opacity: 0.07;
+      background: url('assets/logo-watermark.png') no-repeat center/contain;
+      opacity: 0.5;
       pointer-events: none;
       z-index: 1;
     }
@@ -1401,7 +1425,7 @@
         height: 80px;
         top: 10px;
         left: 10px;
-        opacity: 0.05;
+        opacity: 0.35;
       }
     }
 
