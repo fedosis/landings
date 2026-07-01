@@ -1417,6 +1417,9 @@
       pointer-events: none;
       z-index: 1;
     }
+    section.watermark > .container {
+      padding-left: clamp(80px, 6vw, 100px);
+    }
     .hero.watermark::after {
       z-index: 2;
     }
@@ -1427,6 +1430,9 @@
         bottom: 10px;
         left: 10px;
         opacity: 0.5;
+      }
+      section.watermark > .container {
+        padding-left: clamp(50px, 10vw, 60px);
       }
     }
 
@@ -1802,12 +1808,12 @@
           <h1 class="reveal" style="transition-delay: 0.1s;">
             Ремонт электрических духовых шкафов и варочных панелей <span class="highlight">с гарантией до 1 года</span>
           </h1>
-          <div class="d-flex mt-4 reveal" style="transition-delay: 0.3s;">
-            <a href="tel:+7XXX" class="btn btn-accent btn-icon btn-lg w-100 py-3" style="font-size:1.15rem;">
+          <div class="text-center mt-4 reveal" style="transition-delay: 0.3s;">
+            <a href="tel:+7XXX" class="btn btn-accent btn-icon px-5 py-2" style="font-size:1rem;">
               <i class="bi bi-telephone-fill"></i> Позвонить
             </a>
           </div>
-          <div class="mt-3 reveal" style="transition-delay: 0.4s;">
+          <div class="text-center mt-3 reveal" style="transition-delay: 0.4s;">
             <a href="https://www.avito.ru/user/review?fid=2_Xq9Sa4gyVClOScIAOUHz1OjowHx4ZBZ87DElF8B0nlyL6RdaaYzvyPSWRjp4ZyNE" target="_blank" rel="noopener noreferrer" class="d-inline-flex align-items-center gap-2 text-decoration-none" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:50px;padding:6px 16px;font-size:0.82rem;color:#fff;transition:all 0.3s ease;backdrop-filter:blur(8px);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
               <span style="color:#ffcc00;font-size:0.95rem;line-height:1;">★★★★★</span>
               <span style="font-weight:600;">4.8</span>
