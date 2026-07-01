@@ -1403,16 +1403,16 @@
       border-top: 1px solid rgba(37, 99, 235, 0.08);
     }
 
-    /* Watermark stamp — logo in left corner of sections */
+    /* Watermark stamp — logo in bottom-left corner of sections */
     section.watermark::after {
       content: '';
       position: absolute;
-      top: 20px;
+      bottom: 20px;
       left: 20px;
       width: 120px;
       height: 120px;
       background: url('assets/logo-watermark.png') no-repeat center/contain;
-      opacity: 0.5;
+      opacity: 0.85;
       pointer-events: none;
       z-index: 1;
     }
@@ -1423,9 +1423,9 @@
       section.watermark::after {
         width: 80px;
         height: 80px;
-        top: 10px;
+        bottom: 10px;
         left: 10px;
-        opacity: 0.35;
+        opacity: 0.7;
       }
     }
 
