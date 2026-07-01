@@ -476,27 +476,6 @@
       pointer-events: none;
     }
 
-    /* Hero advantages */
-    .hero-advantages {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 20px;
-    }
-    .hero-advantage-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.85);
-      text-shadow: 0 1px 8px rgba(0,0,0,0.3);
-    }
-    .hero-advantage-item i {
-      color: var(--accent-green);
-      font-size: 0.9rem;
-      flex-shrink: 0;
-    }
-
     /* ============================================
        SECTION HEADERS
     ============================================ */
@@ -1463,8 +1442,6 @@
         min-width: 0;
       }
       .hero .photo-frame { max-width: 220px; margin: 24px auto 0; }
-      .hero-advantages { grid-template-columns: 1fr; max-width: 280px; margin: 16px auto 0; }
-      .hero-advantage-item { font-size: 0.75rem; }
 
       .service-card { padding: 24px 18px; }
       .service-card .icon-box { width: 44px; height: 44px; }
@@ -1547,7 +1524,6 @@
       .hero h1 { font-size: 1.7rem; }
       .hero p { margin-left: auto; margin-right: auto; }
       .hero .photo-frame { max-width: 260px; margin: 28px auto 0; }
-      .hero-advantages { grid-template-columns: 1fr 1fr; max-width: 400px; margin: 16px auto 0; }
 
       .service-card { padding: 28px 20px; }
       .advantage-card { padding: 20px 18px; }
@@ -1568,7 +1544,6 @@
       .hero { padding: 40px 0 60px; }
       .hero h1 { font-size: 2rem; }
       .hero .photo-frame { max-width: 280px; margin-top: 32px; }
-      .hero-advantages { grid-template-columns: 1fr 1fr; }
 
       .service-card { padding: 28px 22px; }
       .advantage-card { padding: 22px 20px; }
@@ -1602,7 +1577,6 @@
     @media (max-height: 500px) and (orientation: landscape) {
       .hero { min-height: auto; padding: 20px 0 40px; }
       .hero .photo-frame { max-width: 160px; }
-      .hero-advantages { grid-template-columns: 1fr 1fr 1fr; }
       .navbar-brand img { height: 36px !important; width: 36px !important; }
     }
 
@@ -1809,13 +1783,6 @@
             </a>
           </div>
 
-          <div class="hero-advantages reveal" style="transition-delay: 0.4s;">
-            <div class="hero-advantage-item"><i class="bi bi-patch-check-fill"></i> Гарантия до 1 года</div>
-            <div class="hero-advantage-item"><i class="bi bi-award-fill"></i> Более 10 лет опыта</div>
-            <div class="hero-advantage-item"><i class="bi bi-truck"></i> Выезд в день обращения</div>
-            <div class="hero-advantage-item"><i class="bi bi-gear-wide-connected"></i> Оригинальные комплектующие</div>
-            <div class="hero-advantage-item"><i class="bi bi-person-check"></i> Работаю лично</div>
-          </div>
         </div>
 
         <div class="col-lg-5">
