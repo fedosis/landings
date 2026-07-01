@@ -1649,6 +1649,46 @@
       .floating-messengers { display: none; }
     }
 
+    /* Floating Avito badge (Top-right) */
+    .floating-avito {
+      position: fixed;
+      top: 80px;
+      right: 24px;
+      z-index: 1050;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 50px;
+      padding: 8px 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #0F172A;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+    .floating-avito:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    .floating-avito .stars {
+      color: #ffcc00;
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+    .floating-avito .rating {
+      font-weight: 700;
+      color: #0F172A;
+    }
+    .floating-avito .count {
+      color: #64748B;
+    }
+    @media (max-width: 767.98px) {
+      .floating-avito { display: none; }
+    }
+
     /* Counters */
     .counter-item { padding: 20px 10px; }
     .counter-number {
@@ -1813,17 +1853,6 @@
             <a href="tel:+7XXX" class="btn btn-accent btn-icon px-5 py-2" style="font-size:1rem;">
               <i class="bi bi-telephone-fill"></i> Позвонить
             </a>
-          </div>
-          <div class="text-center mt-3 reveal" style="transition-delay: 0.4s;">
-            <a href="https://www.avito.ru/user/bfe730753d86ad7cb978c4fb8c50d19e/profile" target="_blank" rel="noopener noreferrer" class="d-inline-flex align-items-center gap-2 text-decoration-none" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:50px;padding:6px 16px;font-size:0.82rem;color:#fff;transition:all 0.3s ease;backdrop-filter:blur(8px);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-              <img src="assets/avito-icon.png" alt="Авито" width="32" height="32" style="flex-shrink:0;border-radius:4px;">
-              <span style="color:#ffcc00;font-size:0.95rem;line-height:1;">★★★★★</span>
-              <span style="font-weight:600;">4.8</span>
-              <span style="opacity:0.7;">·</span>
-              <span style="opacity:0.85;">20 отзывов</span>
-              <i class="bi bi-box-arrow-up-right ms-1" style="font-size:0.7rem;opacity:0.6;"></i>
-            </a>
-          </div>
 
         </div>
 
@@ -2656,14 +2685,6 @@
           </div>
         </div>
       </div>
-
-      <div class="row justify-content-center mt-5 reveal">
-        <div class="col-lg-10">
-          <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--glass-border);">
-            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=37.746%2C55.648%2C37.767%2C55.659&layer=mapnik&marker=55.6535%2C37.7567" width="100%" height="400" style="border:0;display:block;" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -2749,6 +2770,14 @@
   <div class="floating-messengers">
     <a href="#" class="fm-telegram" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
   </div>
+
+  <!-- Floating Avito (Desktop) -->
+  <a href="https://www.avito.ru/user/bfe730753d86ad7cb978c4fb8c50d19e/profile" target="_blank" rel="noopener noreferrer" class="floating-avito">
+    <img src="assets/avito-icon.png" alt="Авито" width="28" height="28" style="border-radius:4px;flex-shrink:0;">
+    <span class="stars">★★★★★</span>
+    <span class="rating">4.8</span>
+    <span class="count">· 20 отзывов</span>
+  </a>
 
   <!-- Floating Phone Button (Desktop) -->
   <a href="tel:+7XXX" class="floating-phone" aria-label="Позвонить">
