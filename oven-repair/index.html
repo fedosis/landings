@@ -1687,7 +1687,26 @@
     }
 
     @media (max-width: 767.98px) {
-      .floating-avito { display: none; }
+      .floating-avito {
+        top: 70px;
+        right: 12px;
+        padding: 4px 10px;
+        gap: 4px;
+        font-size: 0.7rem;
+        border-radius: 30px;
+      }
+      .floating-avito img {
+        width: 18px !important;
+        height: 18px !important;
+      }
+      .floating-avito .stars {
+        width: 0.85rem;
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
+        font-size: 0.75rem;
+      }
+      .floating-avito .count { display: none; }
     }
 
     /* Counters */
